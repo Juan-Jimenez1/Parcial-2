@@ -8,7 +8,7 @@ public class RetiroCajas {
         Pila<Caja> auxiliar = new Pila<>();
         Caja retirada = null;
 
-        // 1. Buscar la caja que se desea retirar
+        // Buscamos la caja
         while (!pila.estaVacia()) {
 
             Caja actual = pila.desapilar();
@@ -20,17 +20,16 @@ public class RetiroCajas {
             }
         }
 
-        // 2. Restaurar las cajas restantes
+        // Restauramos la pila sin la caja
         while (!auxiliar.estaVacia()) {
             pila.apilar(auxiliar.desapilar());
         }
 
-        // 3. Verificar si se encontró la caja
         if (retirada == null) {
             return false;
         }
 
-        // 4. Separar las cajas por posiciones
+        // Separamos las cajas por posiciones
         Pila<Caja> impares = new Pila<>();
         Pila<Caja> pares = new Pila<>();
 
